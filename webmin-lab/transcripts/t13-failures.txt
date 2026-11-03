@@ -1,0 +1,26 @@
+$ login as admin with the WRONG password
+HTTP 200
+page says: JavaScript is disabled | Please enable javascript and refresh the page | Login to Webmin | Warning | Login failed. Please try again. | You must enter a username and password to login to the server on | 127.0.0.1 |  | Remember me | 
+
+$ plain HTTP to the HTTPS port
+$ curl -v http://127.0.0.1:18094/ (plain HTTP to an HTTPS port)
+* Uses proxy env variable no_proxy == 'localhost,127.0.0.1,::1,[::1],198.19.0.1,198.19.0.2,fd8b:4f84:7d32:99::1,[fd8b:4f84:7d32:99::1],fd8b:4f84:7d32:99::2,[fd8b:4f84:7d32:99::2]'
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0*   Trying 127.0.0.1:18094...
+* Connected to 127.0.0.1 (127.0.0.1) port 18094
+> GET / HTTP/1.1
+> Host: 127.0.0.1:18094
+> User-Agent: curl/8.5.0
+> Accept: */*
+> 
+* HTTP 1.0, assume close after body
+< HTTP/1.0 302 Moved Temporarily
+< Date: Tue, 3 Nov 2026 02:21:11 GMT
+< Server: MiniServ
+< Location: https://127.0.0.1:18094
+< Connection: close
+< 
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+* Closing connection
+curl exit: 0

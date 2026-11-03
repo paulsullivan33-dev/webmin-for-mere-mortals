@@ -1,0 +1,31 @@
+The Security Warning page, served by the lab's Webmin when
+/useradmin/edit_user.cgi was requested with no Referer header
+(see transcripts t06 and t07). Page text, extracted from the
+response HTML:
+
+Security Warning
+
+Warning!
+
+Webmin has detected that the program
+https://127.0.0.1:18094/useradmin/edit_user.cgi
+was linked to from an unknown URL, which appears to be outside
+the Webmin server. This may be an attempt to trick your server
+into executing a dangerous command.
+
+Make sure your browser is configured to send referrer
+information so that it can be verified by Webmin.
+
+Alternately, you can configure Webmin to allow links from
+unknown referers by:
+
+Login as root, and edit the /etc/webmin/config file.
+Find the line referers_none=1 and change it to referers_none=0.
+Save the file.
+
+WARNING - this has the side effect of opening your system up to
+reflected XSS attacks and so is not recommended!
+
+(In the lab's tarball install the file named /etc/webmin/config
+is the lab's own config directory copy of "config"; it contains
+referers_none=1, as transcript t14 shows.)

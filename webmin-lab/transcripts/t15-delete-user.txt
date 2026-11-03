@@ -1,0 +1,4 @@
+$ GET /useradmin/delete_user.cgi?user=labmouse (confirm page)
+HTTP 200
+<form class="ui_form" action="delete_user.cgi" method="post" >
+name="confirmed" name="delhome" name="others" name="user" name="viewport" 

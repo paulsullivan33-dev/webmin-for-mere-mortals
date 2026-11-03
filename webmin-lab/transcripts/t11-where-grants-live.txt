@@ -1,0 +1,9 @@
+$ cat etc-webmin/webmin.acl
+admin: acl adsl-client apache at backup-config bacula-backup bandwidth bind8 bsdexports bsdfdisk change-user cluster-copy cluster-cron cluster-passwd cluster-shell cluster-software cluster-useradmin cluster-usermin cluster-webmin cpan cron custom dfsadmin dhcpd dovecot exim exports fail2ban fdisk fetchmail filemin filter firewall firewall6 firewalld format fsdump grub2 hardware-info heartbeat hpuxexports htaccess-htpasswd idmapd inetd init inittab ipfilter ipfw ipsec iscsi-client iscsi-server iscsi-target iscsi-tgtd kea-dhcp krb5 ldap-client ldap-server ldap-useradmin logrotate logviewer lpadmin lvm mailboxes mailcap man mount mysql net nftables nginx nis openslp package-updates pam pap passwd phpini postfix postgresql ppp-client pptp-client pptp-server proc procmail proftpd qmailadmin quota raid rbac samba sarg sendmail servers sgiexports shell shorewall shorewall6 smart-status smf software spam squid sshd status stunnel syslog-ng syslog system-status systemd tcpwrappers time tunnel updown useradmin usermin webalizer webmin webmincron webminlog xinetd xterm zones
+lookout: time
+
+$ grep lookout etc-webmin/config
+29:realname_lookout=Lookout User
+
+$ acl actions in var-webmin/webmin.log
+1793672438.104028.0 [03/Nov/2026 02:20:38] admin 0ea06e0bc464b5f83e254cf7afb4f088 127.0.0.1 acl acl/save_user.cgi "create" "user" "lookout" cert_def='1' days_def='1' fileunix_def='1' hours_def='1' lang_def='1' logouttime_def='1' minsize_def='1' mod='time' name='lookout' pass_def='0' real='Lookout User' root_def='1' theme_def='1'

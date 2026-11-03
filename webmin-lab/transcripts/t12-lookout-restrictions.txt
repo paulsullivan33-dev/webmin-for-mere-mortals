@@ -1,0 +1,15 @@
+$ login as lookout (own cookie jar)
+HTTP/1.0 302 Moved Temporarily
+Date: Tue, 3 Nov 2026 02:20:56 GMT
+Server: MiniServ
+Set-Cookie: sid=893c38017497c8d19e6c4d4211ce48d4; path=/; secure; httpOnly; SameSite=Lax
+Location: https://127.0.0.1:18094/
+
+$ GET /time/ (the one granted module)
+HTTP 200
+<title>System Time - Webmin 2.670 on htch-runtime (Ubuntu Linux 24.04.5)</title>
+
+$ GET /useradmin/ (NOT granted)
+HTTP 200
+<title>Error - Webmin 2.670 on htch-runtime (Ubuntu Linux 24.04.5)</title>
+page text: Error - Webmin 2.670 on htch-runtime (Ubuntu Linux 24.04.5) | Error | Module Index | Access denied : User | lookout | is not allowed to use the

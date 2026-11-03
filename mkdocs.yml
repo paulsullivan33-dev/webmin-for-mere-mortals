@@ -1,0 +1,26 @@
+site_name: Webmin for Mere Mortals
+site_description: A web control panel for a Linux machine, taught from a loopback lab. Installing Webmin from its release tarball, binding it to localhost, signing in, creating and removing a system user through its own pages, giving a Webmin user exactly one module, reading its configuration files and audit log, and knowing its limits, with the security line stated plainly.
+site_url: https://paulsullivan33-dev.github.io/webmin-for-mere-mortals/
+copyright: 'Part of <a href="https://paulsullivan33-dev.github.io/mere-mortals/">For Mere Mortals</a> · Text <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>, code MIT'
+
+# Guides live at the repo root (nice for GitHub browsing).
+# The deploy workflow copies them into docs/ before building.
+theme:
+  name: material
+
+nav:
+  - Home: index.md
+  - What Webmin Is: what-webmin-is.md
+  - The Moving Parts: the-moving-parts.md
+  - Installing Webmin: installing-webmin.md
+  - Your First Login: your-first-login.md
+  - Managing Users and Groups: managing-users-and-groups.md
+  - Webmin Users and Permissions: webmin-users-and-permissions.md
+  - The Configuration Files: the-configuration-files.md
+  - Staying Safe: staying-safe.md
+  - Recipes: recipes.md
+  - The Neighbours: the-neighbours.md
+  - Limits: limits.md
+  - Troubleshooting: troubleshooting.md
+  - Glossary: glossary.md
+  - Writing Criteria: criteria.md

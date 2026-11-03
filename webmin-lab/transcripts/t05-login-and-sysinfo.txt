@@ -1,0 +1,24 @@
+First attempt (transcript kept in the lab notes): POSTing the login form
+without first fetching the login page failed with HTTP 500 "Cache issue
+or no cookies support" -- miniserv sets a cookie on the login page and
+requires it back with the form. The working sequence:
+
+$ GET / (fills the cookie jar)
+HTTP 200
+testing
+
+$ POST /session_login.cgi user=admin pass=<lab password> (headers)
+HTTP/1.0 302 Moved Temporarily
+Date: Tue, 3 Nov 2026 02:19:00 GMT
+Server: MiniServ
+Set-Cookie: sid=0ea06e0bc464b5f83e254cf7afb4f088; path=/; secure; httpOnly; SameSite=Lax
+Location: https://127.0.0.1:18094/
+Connection: close
+
+
+$ GET /sysinfo.cgi (trimmed)
+<!DOCTYPE html>
+<html data-redirect="" data-needs-restart="" data-host="127.0.0.1:18094" data-hostname="htch-runtime" data-title-initial="Webmin 2.670 (Ubuntu Linux 24.04.5)" data-debug="0" data-session="1" data-session-hash="9d61c306b2bb82cbe988dd18923431de150277d40079c9fd1831242b271c3c9d" data-script-name="/sysinfo.cgi" data-bgs="gainsboro" data-night-mode="0" data-high-contrast="0" data-navigation-collapsed="0" data-slider-fixed="0" data-terminal="1" data-shell="1" data-webmin="1" data-usermin="" data-navigation="0" data-status="1" data-package-updates="1" data-csf="0" data-theme="blue" data-default-theme="blue" data-content-top-margin="1" data-content-side-margin="1" data-editor-palette="monokai" data-static-theme-version="26.70" data-theme-version="26.70" data-theme-version-data="%7B%22version%22%3A%2226%2E70%22%2C%22versionfull%22%3A%2226%2E70%22%2C%22timestamped%22%3A%2226700109999999999%22%7D"  data-level="0" data-user-home="" data-user-id="" data-user="admin" data-ltr="1" data-language="en" data-locale="en-US" data-charset="UTF-8" data-notice="0" data-initial-wizard="1" data-webprefix="" data-webprefix-proxy="0" data-current-product="webmin" data-pro-vm="0"  data-pro-cm="0" data-module="" data-uri="/sysinfo.cgi" data-progress="1" data-product="webmin" data-access-level="0" data-time-offset="+0000">
+<head>
+ <meta name="color-scheme" content="only light">
+ <noscript> <style> html[data-bgs="gainsboro"] { background-color: #d6d6d6; } html[data-bgs="nightRider"] { backgro

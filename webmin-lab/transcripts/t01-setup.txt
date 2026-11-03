@@ -1,0 +1,98 @@
+$ config_dir=.../etc-webmin var_dir=.../var-webmin port=18094 login=admin ssl=1 atboot=0 ./setup.sh
+****************************************************************************
+           Welcome to the Webmin setup script, version 2.670
+****************************************************************************
+Webmin is a web-based interface that allows Unix-like operating
+systems and common Unix services to be easily administered.
+
+Installing Webmin in /home/hatch/workspace/webmin-labwork/webmin-2.670
+
+****************************************************************************
+Webmin uses separate directories for configuration files and log files.
+Unless you want to run multiple versions of Webmin at the same time
+you can just accept the defaults.
+
+Config file directory [/home/hatch/workspace/webmin-labwork/etc-webmin]: /home/hatch/workspace/webmin-labwork/etc-webmin
+Log file directory [/home/hatch/workspace/webmin-labwork/var-webmin]: /home/hatch/workspace/webmin-labwork/var-webmin
+
+****************************************************************************
+Webmin is written entirely in Perl. Please enter the full path to the
+Perl 5 interpreter on your system.
+
+
+Testing Perl ..
+.. done
+
+****************************************************************************
+Operating system name:    Ubuntu Linux
+Operating system version: 24.04.5
+
+****************************************************************************
+Webmin uses its own password protected web server to provide access
+to the administration programs. The setup script needs to know :
+ - What port to run the web server on. There must not be another
+   web server already using this port.
+ - The login name required to access the web server.
+ - The password required to access the web server.
+ - If the web server should use SSL (if your system supports it).
+ - Whether to start webmin at boot time.
+
+Web server port (default 10000): Login name (default admin): Login password: 
+****************************************************************************
+Creating web server config files ..
+.. done
+
+Creating access control file ..
+.. done
+
+Inserting path to perl into scripts ..
+.. done
+
+Creating start and stop scripts ..
+.. done
+
+Copying config files ..
+.. done
+
+Creating uninstall script /home/hatch/workspace/webmin-labwork/etc-webmin/uninstall.sh ..
+.. done
+
+Changing ownership and permissions ..
+.. done
+
+Running postinstall scripts ..
+.. done
+
+Enabling background status collection ..
+.. done
+
+Attempting to start Webmin web server ..
+.. done
+
+****************************************************************************
+Webmin has been installed and started successfully.
+
+Since Webmin was installed outside the package manager, ensure the
+following recommended Perl modules and packages are present:
+ Perl modules:
+  - DateTime, DateTime::Locale, DateTime::TimeZone, Data::Dumper,
+  - Digest::MD5, Digest::SHA, Encode::Detect, File::Basename,
+  - File::Path, Net::SSLeay, Time::HiRes, Time::Local, Time::Piece,
+  - Socket6, Sys::Syslog, JSON::XS, lib, open
+ Packages:
+  - openssl - Cryptography library with TLS implementation
+  - shared-mime-info - Shared MIME information database
+  - tar gzip unzip - File compression and packaging utilities
+
+Use your web browser to go to the following URL and login
+with the name and password you entered previously:
+
+  https://htch-runtime:18094
+
+Because Webmin uses SSL for encryption only, the certificate
+it uses is not signed by one of the recognized CAs such as
+Verisign. When you first connect to the Webmin server, your
+browser will ask you if you want to accept the certificate
+presented, as it does not recognize the CA. Say yes.
+
+setup exit: 0

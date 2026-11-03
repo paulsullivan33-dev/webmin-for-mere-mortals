@@ -1,0 +1,14 @@
+$ POST /acl/save_user.cgi (second attempt, with logouttime_def and friends)
+HTTP/1.0 302 Moved Temporarily
+Date: Tue, 3 Nov 2026 02:20:37 GMT
+Server: MiniServ/2.670
+Connection: close
+Location: /acl/index.cgi?refresh=1
+
+
+$ miniserv.users (names only)
+admin
+lookout
+$ files for lookout:
+$ acl/lookout.acl:
+$ time/lookout.acl:

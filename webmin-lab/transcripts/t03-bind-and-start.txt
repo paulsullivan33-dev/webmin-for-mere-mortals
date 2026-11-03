@@ -1,0 +1,13 @@
+$ etc-webmin/stop
+$ echo bind=127.0.0.1 >> etc-webmin/miniserv.conf
+port=18094
+ssl=1
+bind=127.0.0.1
+$ etc-webmin/start
+$ ss -tlnp | grep 18094
+
+$ curl -k -i https://127.0.0.1:18094/ (first lines)
+
+Note: the ss and curl checks above raced the restart -- miniserv binds a few
+seconds after start, once its core module has loaded. The retry 20 seconds
+later is transcript t04: the listener is on 127.0.0.1 only, as intended.

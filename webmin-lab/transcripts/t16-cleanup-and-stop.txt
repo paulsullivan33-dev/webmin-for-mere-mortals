@@ -1,0 +1,34 @@
+$ POST /useradmin/delete_user.cgi user=labmouse delhome=1 confirmed
+HTTP/1.0 200 Document follows
+Date: Tue, 3 Nov 2026 02:21:43 GMT
+Server: MiniServ/2.670
+Connection: close
+Strict-Transport-Security: max-age=31536000;
+$ getent passwd labmouse (after)
+labmouse:x:1000:100:Lab Mouse:/home/labmouse:/bin/bash
+hatch
+labmouse
+
+$ GET /acl/delete_user.cgi?user=lookout (confirm page?)
+HTTP 302
+
+$ getent passwd labmouse (now)
+(gone)
+$ grep labmouse /etc/passwd /etc/shadow /etc/group
+(no trace)
+$ ls /home
+hatch
+$ tail webmin.log (deletes recorded)
+1793672505.104880.0 [03/Nov/2026 02:21:45] admin 0ea06e0bc464b5f83e254cf7afb4f088 127.0.0.1 useradmin useradmin/delete_user.cgi "delete" "user" "labmouse" chang
+1793672505.104897.0 [03/Nov/2026 02:21:45] admin 0ea06e0bc464b5f83e254cf7afb4f088 127.0.0.1 acl acl/delete_user.cgi "delete" "user" "lookout"
+$ cat stop script
+#!/bin/sh
+/usr/bin/systemctl stop webmin
+$ etc-webmin/stop
+$ ss -tlnp | grep 18094
+(nothing listening on 18094)
+$ ps for miniserv
+(no miniserv process)
+$ tail miniserv.error
+[03/Nov/2026:02:22:08 +0000] Shutting down
+[03/Nov/2026:02:22:08 +0000] Shutting down

@@ -1,0 +1,7 @@
+$ GET /useradmin/ (module index, status + title)
+HTTP 200
+<title>Users and Groups - Webmin 2.670 on htch-runtime (Ubuntu Linux 24.04.5)</title>
+
+$ GET /useradmin/edit_user.cgi (new-user form) -- form field names
+HTTP 200
+

@@ -1,0 +1,39 @@
+$ the config directory: one folder per module, plus the server's own files
+142
+failed.pl
+installed.cache
+login.pl
+logout.pl
+miniserv.conf
+miniserv.pem
+miniserv.users
+uninstall.sh
+webmin.acl
+
+$ global config (etc-webmin/config, selected lines)
+os_type=debian-linux
+os_version=14.0
+real_os_type=Ubuntu Linux
+referers_none=1
+theme=authentic-theme
+
+$ a module's own config: etc-webmin/useradmin/config (first 8 lines)
+from_files=0
+base_uid=1000
+home_base=/home
+alias_check=0
+last_show=0
+uid_calc=0
+display_mode=1
+passwd_progmode=0
+
+$ start/stop live in the config directory too
+/home/hatch/workspace/webmin-labwork/etc-webmin/start 42B
+/home/hatch/workspace/webmin-labwork/etc-webmin/stop 41B
+
+$ var directory: logs, pid, session store
+blocked locks miniserv.error miniserv.lastcrons miniserv.log miniserv.log.time miniserv.pid module.infos.cache modules session.key sessiondb.dir sessiondb.pag webmin.log webmin.log.time 
+$ who did what: tail of var-webmin/webmin.log
+1793672438.104028.0 [03/Nov/2026 02:20:38] admin 0ea06e0bc464b5f83e254cf7afb4f088 127.0.0.1 acl acl/save_user.cgi "create" "user" "lookout" cert_def='
+1793672456.104408.0 [03/Nov/2026 02:20:56] lookout 893c38017497c8d19e6c4d4211ce48d4 127.0.0.1 global record-login.pl "login" "-" "-"
+1793672466.104516.0 [03/Nov/2026 02:21:06] admin - 127.0.0.1 global record-failed.pl "failed" "-" "wrongpass"

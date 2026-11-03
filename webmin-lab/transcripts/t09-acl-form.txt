@@ -1,0 +1,10 @@
+$ GET /acl/edit_user.cgi (new Webmin user form, with Referer)
+HTTP 200
+<title>Create Webmin User - Webmin 2.670 on htch-runtime (Ubuntu Linux 24.04.5)</title>
+<form class="ui_form" action="save_user.cgi" method="post" >
+field names:
+name="acl_security_form" name="cert" name="cert_def" name="days" name="days_def" name="download_address_mode" name="download_allowed_addresses" name="email" name="fileunix" name="fileunix_def" name="gedit_can" name="gedit_cannot" name="gedit_gid" name="gedit_gid2" name="gedit_mode" name="hours_def" name="hours_hfrom" name="hours_hto" name="hours_mfrom" name="hours_mto" name="ipmode" name="ips" name="lang" name="lang_def" name="logouttime" name="logouttime_def" name="minsize" name="minsize_def" name="mod" name="name" name="negative" name="nodot" name="notabs" name="otherdirs" name="pass" name="pass_def" name="readonly" name="real" name="root" name="root_def" name="rpc" name="safe" name="temp" name="theme" name="theme_def" name="uedit_can" name="uedit_cannot" name="uedit_group" name="uedit_mode" name="uedit_uid" name="uedit_uid2" name="viewport" name="webminsearch" 
+$ cat etc-webmin/miniserv.users (password column truncated)
+admin:$y$j9T$8wu1pWmd$3vjkrgdGC3y8MLYPnI
+$ ls etc-webmin/acl/
+config

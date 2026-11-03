@@ -1,0 +1,18 @@
+$ grep labmouse /etc/passwd (before)
+(no such user yet)
+
+$ POST /useradmin/save_user.cgi  user=labmouse ... (response headers + title)
+HTTP/1.0 302 Moved Temporarily
+Date: Tue, 3 Nov 2026 02:19:54 GMT
+Server: MiniServ/2.670
+Connection: close
+Location: /useradmin/index.cgi?mode=users
+
+7
+
+$ getent passwd labmouse (OUTSIDE Webmin)
+labmouse:x:1000:100:Lab Mouse:/home/labmouse:/bin/bash
+$ ls -ld /home/labmouse
+drwxr-x--- 1 labmouse users 0 Nov  3 02:19 /home/labmouse
+$ sudo-less shadow check: password field prefix
+labmouse:$y$j9T$TJWG.arIU8jyzb

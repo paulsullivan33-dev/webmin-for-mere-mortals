@@ -1,0 +1,27 @@
+$ ss -tlnp | grep 18094
+LISTEN 0      0          127.0.0.1:18094      0.0.0.0:*    users:(("miniserv.pl",pid=101620,fd=5))
+
+$ curl -k -s -i https://127.0.0.1:18094/ | head -20
+HTTP/1.0 200 Document follows
+Date: Tue, 3 Nov 2026 02:18:40 GMT
+Server: MiniServ
+Connection: close
+Strict-Transport-Security: max-age=31536000;
+pragma: no-cache
+Expires: Thu, 1 Jan 1970 00:00:00 GMT
+Cache-Control: no-store, no-cache, must-revalidate
+Cache-Control: post-check=0, pre-check=0
+Auth-type: auth-required=1
+Set-Cookie: redirect=1; path=/; secure; httpOnly
+Set-Cookie: testing=1; path=/; secure; httpOnly
+X-Frame-Options: SAMEORIGIN
+Content-Security-Policy: script-src 'self' 'unsafe-inline' 'unsafe-eval'; frame-src 'self'; child-src 'self'
+X-Content-Type-Options: nosniff
+X-no-links: 1
+Content-type: text/html; Charset=UTF-8
+
+<!DOCTYPE html>
+<html class="ui--html session_login" data-bgs="gainsboro"><head>
+
+$ curl -k -s https://127.0.0.1:18094/ | grep -oiE "<title>[^<]*</title>" 
+<title>Login to Webmin</title>

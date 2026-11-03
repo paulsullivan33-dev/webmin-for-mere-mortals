@@ -1,0 +1,32 @@
+$ apt-get install -y libnet-ssleay-perl libauthen-pam-perl
+Unpacking libnet-ssleay-perl:amd64 (1.94-1build4) ...
+Setting up perl-openssl-defaults:amd64 (7build3) ...
+Setting up libauthen-pam-perl (0.16-6build3) ...
+Setting up libnet-ssleay-perl:amd64 (1.94-1build4) ...
+Processing triggers for man-db (2.12.0-4build2) ...
+Net::SSLeay OK 1.94
+$ uname/os
+PRETTY_NAME="Ubuntu 24.04.5 LTS"
+NAME="Ubuntu"
+VERSION_ID="24.04"
+
+$ curl -sIL https://github.com/webmin/webmin/releases/download/2.670/webmin-2.670.tar.gz (headers, trimmed)
+HTTP/1.1 200 Connection Established
+HTTP/1.1 302 Found
+Location: https://release-assets.githubusercontent.com/github-production-release-asset/256164/d380c8d6-0090-4bc5-b363-079b433a4a4f?sp=r&sv=2018-11-09&sr=b&spr=https&se=2026-11-03T03%3A11%3A36Z&rscd=attachment%3B+filename%3Dwebmin-2.670.tar.gz&rsct=application%2Foctet-stream&skoid=96c2d410-5711-43a1-aedd-ab1947aa7ab0&sktid=398a6654-997b-47e9-b12b-9515b896b4de&skt=2026-11-03T02%3A10%3A46Z&ske=2026-11-03T03%3A11%3A36Z&sks=b&skv=2018-11-09&sig=Hr%2BCyhRT%2FXVjrSbvtoQZaOm%2BNlpGhO5jNYZwlS%2BQao0%3D&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmVsZWFzZS1hc3NldHMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIiwia2V5Ijoia2V5MSIsImV4cCI6MTc5MzY3NDAxMywibmJmIjoxNzkzNjcyMjEzLCJwYXRoIjoicmVsZWFzZWFzc2V0cHJvZHVjdGlvbi5ibG9iLmNvcmUud2luZG93cy5uZXQifQ.LW35wASQ_rjRhRSs_KkNQ9EzRR12_MhCTpOiMH_L084&response-content-disposition=attachment%3B%20filename%3Dwebmin-2.670.tar.gz&response-content-type=application%2Foctet-stream
+Content-Length: 0
+HTTP/1.1 200 Connection Established
+HTTP/1.1 200 OK
+
+$ curl -sLO <same URL>
+total 38048
+drwxrwx--- 1 root root       38 Nov  3 02:16 .
+drwxrwx--- 1 root root       18 Nov  3 02:16 ..
+-rw-rw---- 1 root root 38959343 Nov  3 02:17 webmin-2.670.tar.gz
+617af07a890bea18a83dca5c9d7168de1ad4d5f3076d8a1df3475f123748dc21  webmin-2.670.tar.gz
+webmin-2.670/
+webmin-2.670/acl/
+webmin-2.670/acl/module.info.fi
+webmin-2.670/acl/module.info.hr.auto
+webmin-2.670/acl/config.info.no
+23549

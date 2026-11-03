@@ -1,0 +1,10 @@
+$ GET /useradmin/edit_user.cgi with NO Referer header -> title:
+<title>Security Warning</title>
+(the Security Warning page text is quoted in full in the guide chapter)
+
+$ GET /useradmin/edit_user.cgi -e https://127.0.0.1:18094/useradmin/
+HTTP 200
+<title>Create User - Webmin 2.670 on htch-runtime (Ubuntu Linux 24.04.5)</title>
+<form class="ui_form" action="save_user.cgi" method="post" >
+field names:
+name="copy_files" name="disable" name="encpass" name="expired" name="expirem" name="expirey" name="forcechange" name="gid" name="gidmode" name="home" name="home_base" name="inactive" name="makehome" name="max" name="min" name="newgid" name="others" name="othersh" name="pass" name="passmode" name="real" name="sgid" name="sgid_item" name="sgid_search" name="shell" name="sshkey" name="uid" name="uid_def" name="user" name="viewport" name="warn" 
